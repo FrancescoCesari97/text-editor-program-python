@@ -31,10 +31,10 @@ def paste():
     pass
 
 def about():
-    pass
+    showinfo("About this program", "this is a program written in python")
 
 def quit():
-    pass
+    window.destroy()
 
 
 window = Tk()
@@ -100,5 +100,7 @@ edit_menu.add_command(label="Cut", command=cut)
 edit_menu.add_command(label="Copy", command=copy)
 edit_menu.add_command(label="Paste", command=paste)
 edit_menu.add_command(label="About", command=about)
+
+
 
 window.mainloop()
