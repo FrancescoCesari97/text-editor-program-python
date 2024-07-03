@@ -34,3 +34,22 @@ def about():
 
 def quit():
     pass
+
+
+window = Tk()
+
+window.title("Text editor program")
+
+file = None
+
+window_width = 500
+window_height = 500
+screen_width = window.winfo_screenwidth()
+screen_height = window.winfo_screenheight()
+
+x = int((screen_width / 2) - (window_width / 2))
+y = int((screen_width / 2) - (window_width / 2))
+
+window.geometry()
+
+window.mainloop()
