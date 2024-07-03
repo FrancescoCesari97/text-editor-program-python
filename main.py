@@ -6,7 +6,8 @@ from tkinter.messagebox import *
 from tkinter.filedialog import *
 
 def change_color():
-    pass
+    color = colorchooser.askcolor(title="pick a color")
+    text_area.config(fg=color[1])
 
 def change_font(*args):
     pass
@@ -65,6 +66,15 @@ scrollbar = Scrollbar(text_area)
 window.grid_rowconfigure(0, weight=1)
 window.grid_columnconfigure(0, weight=1)
 text_area.grid(sticky= N + E + S + W )
+
+frame = Frame(window)
+frame.grid()
+
+color_button = Button(frame, text="color", command=change_color)
+color_button.grid(row=0, column=0)
+
+scrollbar.pack(side=RIGHT, fill=Y)
+text_area.config(yscrollcommand=scrollbar.set)
 
 
 window.mainloop()
