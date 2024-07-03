@@ -35,7 +35,23 @@ def open_file():
         file.close()
 
 def save_file():
-    pass
+    file = filedialog.asksaveasfilename(initialfile='untitled.txt',
+                                        defaultextension=".txt",
+                                        filetypes=[("All Files", "*.*"),
+                                                   ("Text Documents", "*.txt")])
+    if file is None:
+        return
+    else:
+        try:
+            window.title(os.path.basename(file))
+            file = open(file, "w")
+
+            file.write(text_area.get(1.0, END))
+
+        except Exception:
+            print("couldn't save file")
+        finally:
+            file.close()
 
 def cut():
     text_area.event_generate("<<Cut>>")
